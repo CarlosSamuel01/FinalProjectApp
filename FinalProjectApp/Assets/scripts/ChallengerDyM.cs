@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MathChallenge : MonoBehaviour
+public class ChallengerDyM : MonoBehaviour
 {
     public Text questionText;
     public InputField answerInput;
@@ -16,7 +16,7 @@ public class MathChallenge : MonoBehaviour
     private int attempts = 3;
     private float timeLimit = 30f;
     private float timeRemaining;
-    private int currentAnswer;
+    private float currentAnswer;
     private bool isPlaying = true;
 
     void Start()
@@ -25,6 +25,7 @@ public class MathChallenge : MonoBehaviour
         NewQuestion();
         timeRemaining = timeLimit;
         UpdateUI();
+        answerInput.ActivateInputField();
     }
 
     void Update()
@@ -37,47 +38,48 @@ public class MathChallenge : MonoBehaviour
                 CheckAnswer();
             }
             UpdateUI();
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            OnSubmitAnswer();
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                OnSubmitAnswer();
+            }
         }
     }
 
     void NewQuestion()
     {
-        int num1 = Random.Range(1, 50);
-        int num2 = Random.Range(1, 50);
-        bool isAddition = Random.value > 0.5f;
+        int num1 = Random.Range(1, 101);
+        int num2 = Random.Range(1, 101);
+        int operation = Random.Range(0, 2); // 0: Multiplication, 1: Division
 
-        if (isAddition)
+        switch (operation)
         {
-            currentAnswer = num1 + num2;
-            questionText.text = num1 + " + " + num2;
-        }
-        else
-        {
-            // Asegurarse de que num1 sea mayor o igual que num2
-            if (num1 < num2)
-            {
-                int temp = num1;
-                num1 = num2;
-                num2 = temp;
-            }
-            currentAnswer = num1 - num2;
-            questionText.text = num1 + " - " + num2;
+            case 0: // Multiplication
+                currentAnswer = num1 * num2;
+                questionText.text = num1 + " * " + num2;
+                break;
+            case 1: // Division
+                while (num1 % num2 != 0 || num1 < num2)
+                {
+                    num1 = Random.Range(1, 101);
+                    num2 = Random.Range(1, 101);
+                }
+                currentAnswer = num1 / (float)num2;
+                questionText.text = num1 + " / " + num2;
+                break;
         }
 
         timeRemaining = timeLimit;
         answerInput.text = "";
+        answerInput.ActivateInputField();
     }
 
     public void CheckAnswer()
     {
-        int playerAnswer;
-        if (int.TryParse(answerInput.text, out playerAnswer))
+        float playerAnswer;
+        if (float.TryParse(answerInput.text, out playerAnswer))
         {
-            if (playerAnswer == currentAnswer)
+            if (Mathf.Abs(playerAnswer - currentAnswer) < 0.01f) // Allow some tolerance for floating point comparison
             {
                 score++;
                 if (score % 5 == 0 && timeLimit > 10)

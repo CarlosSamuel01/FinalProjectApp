@@ -33,4 +33,9 @@ public class AdminUI : MonoBehaviour
         SceneManager.LoadScene("resPreguntas");
         
     }
+    public void RetodivisionyMulti()
+    {
+        SceneManager.LoadScene("Lvl 4");
+
+    }
 }
