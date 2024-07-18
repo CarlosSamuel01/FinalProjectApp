@@ -20,11 +20,26 @@ public class MathGameController : MonoBehaviour
     void Start()
     {
         // Agregar preguntas a la lista
-        questions.Add(new Question { questionText = "¿cual es la respuesta?", correctAnswer = 4, questionTemplate = "2 + 2 = _" });
-        questions.Add(new Question { questionText = "¿cual es la respuesta?", correctAnswer = 4, questionTemplate = "1 + 3 = _" });
-        questions.Add(new Question { questionText = "¿¿cual es la respuesta?",correctAnswer = 8, questionTemplate = "5 + 3 = _" });
-        questions.Add(new Question { questionText = "¿cual es la respuesta?", correctAnswer = 6, questionTemplate = "4 + 2 = _" });
-        questions.Add(new Question { questionText = "¿cual es la respuesta?", correctAnswer = 6, questionTemplate = "5 + 1 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 4, questionTemplate = "2 + 2 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 3, questionTemplate = "5 - 2 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 6, questionTemplate = "_ + 4 = 10" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 5, questionTemplate = "7 - 2 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 9, questionTemplate = "4 + 5 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 2, questionTemplate = "8 - 6 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 10, questionTemplate = "6 + 4 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 4, questionTemplate = "_ - 1 = 3" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 7, questionTemplate = "3 + 4 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 5, questionTemplate = "10 - 5 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 8, questionTemplate = "_ + 2 = 10" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 1, questionTemplate = "6 - 5 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 13, questionTemplate = "8 + 5 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 2, questionTemplate = "7 - 5 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 14, questionTemplate = "9 + 5 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 3, questionTemplate = "8 - 5 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 15, questionTemplate = "10 + 5 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 2, questionTemplate = "_ - 1 = 1" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 6, questionTemplate = "2 + 4 = _" });
+        questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 3, questionTemplate = "9 - 6 = _" });
 
         // Mezclar las preguntas aleatoriamente
         ShuffleQuestions();
