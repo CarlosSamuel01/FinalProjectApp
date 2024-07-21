@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MiniGameManager : MonoBehaviour
+public class minigameRmanager : MonoBehaviour
 {
-    public int maxNumber;
-    private int currentSum;
+    public int maxNumber = 100;
+    public int currentSum = 100;
     public Text sumText;
-   
+    
 
     void Update()
     {
-        sumText.text = "Suma: " + currentSum + "/" + maxNumber;
+        sumText.text = "Resta: " + currentSum + "/" + maxNumber;
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -33,8 +33,8 @@ public class MiniGameManager : MonoBehaviour
 
     public void AddNumber(int number)
     {
-        currentSum += number;
-        if (currentSum > maxNumber)
+        currentSum -= number;
+        if (currentSum < 0)
         {
             RestartLevel();
         }

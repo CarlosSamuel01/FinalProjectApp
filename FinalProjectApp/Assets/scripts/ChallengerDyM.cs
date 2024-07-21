@@ -14,7 +14,7 @@ public class ChallengerDyM : MonoBehaviour
 
     private int score = 0;
     private int attempts = 3;
-    private float timeLimit = 30f;
+    private float timeLimit = 60f;
     private float timeRemaining;
     private float currentAnswer;
     private bool isPlaying = true;
@@ -82,7 +82,7 @@ public class ChallengerDyM : MonoBehaviour
             if (Mathf.Abs(playerAnswer - currentAnswer) < 0.01f) // Allow some tolerance for floating point comparison
             {
                 score++;
-                if (score % 5 == 0 && timeLimit > 10)
+                if (score % 5 == 0 && timeLimit > 30)
                 {
                     timeLimit -= 5f;
                 }
