@@ -54,6 +54,12 @@ public class preguntas : MonoBehaviour
 
         // Agregar listener al botón de enviar respuesta
         submitButton.onClick.AddListener(CheckAnswer);
+
+        // Agregar listener para la tecla Enter
+        answerInput.onSubmit.AddListener(delegate { CheckAnswer(); });
+
+        // Seleccionar el campo de entrada automáticamente al inicio
+        answerInput.ActivateInputField();
     }
 
     void Update()
@@ -80,6 +86,9 @@ public class preguntas : MonoBehaviour
             questionText.text = "¡Has completado todas las preguntas!";
             submitButton.interactable = false; // Desactivar el botón cuando se completen todas las preguntas
         }
+
+        // Seleccionar automáticamente el campo de entrada
+        answerInput.ActivateInputField();
     }
 
     void CheckAnswer()
@@ -99,6 +108,7 @@ public class preguntas : MonoBehaviour
                 {
                     Debug.Log("Incorrecto, inténtalo de nuevo.");
                     questionText.text = "Incorrecto, inténtalo de nuevo. " + currentQuestion.questionTemplate;
+                    answerInput.ActivateInputField(); // Seleccionar automáticamente el campo de entrada
                     return; // No pasar a la siguiente pregunta si la respuesta es incorrecta
                 }
             }
@@ -106,6 +116,7 @@ public class preguntas : MonoBehaviour
             {
                 Debug.Log("Por favor, ingresa un número válido.");
                 questionText.text = "Por favor, ingresa un número válido. " + currentQuestion.questionTemplate;
+                answerInput.ActivateInputField(); // Seleccionar automáticamente el campo de entrada
                 return; // No pasar a la siguiente pregunta si la entrada no es válida
             }
 
@@ -114,6 +125,9 @@ public class preguntas : MonoBehaviour
 
             // Configurar la siguiente pregunta
             SetQuestion();
+
+            // Seleccionar automáticamente el campo de entrada
+            answerInput.ActivateInputField();
         }
     }
 }

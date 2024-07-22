@@ -52,6 +52,12 @@ public class MathGameController : MonoBehaviour
 
         // Agregar listener al botón de enviar respuesta
         submitButton.onClick.AddListener(CheckAnswer);
+
+        // Agregar listener para la tecla Enter
+        answerInput.onSubmit.AddListener(delegate { CheckAnswer(); });
+
+        // Seleccionar el campo de entrada automáticamente al inicio
+        answerInput.ActivateInputField();
     }
 
     void ShuffleQuestions()
@@ -79,6 +85,9 @@ public class MathGameController : MonoBehaviour
             currentQuestionIndex = 0;
             SetQuestion(currentQuestionIndex);
         }
+
+        // Seleccionar automáticamente el campo de entrada
+        answerInput.ActivateInputField();
     }
 
     void UpdateTurnCounter()
@@ -128,6 +137,9 @@ public class MathGameController : MonoBehaviour
 
             // Limpiar el campo de entrada
             answerInput.text = "";
+
+            // Seleccionar automáticamente el campo de entrada
+            answerInput.ActivateInputField();
         }
     }
 }
