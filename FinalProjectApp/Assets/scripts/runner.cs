@@ -12,6 +12,9 @@ public class MathGameController : MonoBehaviour
     public Transform player;            // Referencia al objeto que representa al jugador
     public float stepDistance = 1.0f;   // Distancia que el jugador se moverá con cada paso
     public TMP_Text finalturns;
+    public AudioClip correcto;
+    public AudioClip incorrecto;
+    private AudioSource AudioSource;
 
     private int currentQuestionIndex = 0; // Índice de la pregunta actual
     private int turnCounter = 0;          // Contador de turnos
@@ -19,6 +22,7 @@ public class MathGameController : MonoBehaviour
 
     void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
         // Agregar preguntas a la lista
         questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 4, questionTemplate = "2 + 2 = _" });
         questions.Add(new Question { questionText = "¿cuál es la respuesta?", correctAnswer = 3, questionTemplate = "5 - 2 = _" });
@@ -110,7 +114,7 @@ public class MathGameController : MonoBehaviour
 
                 if (playerAnswer == questions[currentQuestionIndex].correctAnswer)
                 {
-                    Debug.Log("¡Correcto!");
+                    AudioSource.PlayOneShot(correcto);
                     questionText.text = "¡Correcto! " + questions[currentQuestionIndex].questionTemplate.Replace("_", playerAnswer.ToString());
 
                     // Mover al jugador un paso adelante
@@ -122,7 +126,7 @@ public class MathGameController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Incorrecto, inténtalo de nuevo.");
+                    AudioSource.PlayOneShot(incorrecto);
                     questionText.text = "Incorrecto, inténtalo de nuevo. " + questions[currentQuestionIndex].questionTemplate;
 
                     // Mover al jugador un paso hacia atrás
@@ -131,7 +135,6 @@ public class MathGameController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Por favor, ingresa un número válido.");
                 questionText.text = "Por favor, ingresa un número válido. " + questions[currentQuestionIndex].questionTemplate;
             }
 

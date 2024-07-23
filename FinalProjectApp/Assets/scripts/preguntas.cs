@@ -18,6 +18,9 @@ public class preguntas : MonoBehaviour
     public TMP_InputField answerInput;  // Referencia al TMP_InputField para la respuesta del jugador
     public Button submitButton;
     public TMP_Text timerText;          // Referencia al TMP_Text que muestra el temporizador
+    private AudioSource audioSource;
+    public AudioClip correcto;
+    public AudioClip incorrecto;
 
     private float elapsedTime = 0f;     // Tiempo transcurrido
 
@@ -27,6 +30,7 @@ public class preguntas : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // Agregar preguntas a la lista
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 2, questionTemplate = "2 + _ = 4" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 3, questionTemplate = "5 - _ = 2" });
@@ -101,12 +105,12 @@ public class preguntas : MonoBehaviour
             {
                 if (playerAnswer == currentQuestion.correctAnswer)
                 {
-                    Debug.Log("¡Correcto!");
+                    audioSource.PlayOneShot(correcto);
                     questionText.text = "¡Correcto! " + currentQuestion.questionTemplate.Replace("_", playerAnswer.ToString());
                 }
                 else
                 {
-                    Debug.Log("Incorrecto, inténtalo de nuevo.");
+                    audioSource.PlayOneShot(incorrecto);
                     questionText.text = "Incorrecto, inténtalo de nuevo. " + currentQuestion.questionTemplate;
                     answerInput.ActivateInputField(); // Seleccionar automáticamente el campo de entrada
                     return; // No pasar a la siguiente pregunta si la respuesta es incorrecta

@@ -18,9 +18,13 @@ public class ChallengerDyM : MonoBehaviour
     private float timeRemaining;
     private float currentAnswer;
     private bool isPlaying = true;
+    private AudioSource audioSource;
+    public AudioClip correcto;
+    public AudioClip incorrcto;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         gameOverPanel.SetActive(false);
         NewQuestion();
         timeRemaining = timeLimit;
@@ -81,6 +85,7 @@ public class ChallengerDyM : MonoBehaviour
         {
             if (Mathf.Abs(playerAnswer - currentAnswer) < 0.01f) // Allow some tolerance for floating point comparison
             {
+                audioSource.PlayOneShot(correcto);
                 score++;
                 if (score % 5 == 0 && timeLimit > 30)
                 {
@@ -91,6 +96,7 @@ public class ChallengerDyM : MonoBehaviour
             else
             {
                 attempts--;
+                audioSource.PlayOneShot(incorrcto);
                 if (attempts <= 0)
                 {
                     GameOver();

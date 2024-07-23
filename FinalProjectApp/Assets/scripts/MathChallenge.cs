@@ -11,6 +11,9 @@ public class MathChallenge : MonoBehaviour
     public Text attemptsText;
     public Text scoreText;
     public GameObject gameOverPanel;
+    private AudioSource audioSource;
+    public AudioClip correcto;
+    public AudioClip incorrecto;
 
     private int score = 0;
     private int attempts = 3;
@@ -21,6 +24,7 @@ public class MathChallenge : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         gameOverPanel.SetActive(false);
         NewQuestion();
         timeRemaining = timeLimit;
@@ -79,6 +83,7 @@ public class MathChallenge : MonoBehaviour
         {
             if (playerAnswer == currentAnswer)
             {
+                audioSource.PlayOneShot(correcto);
                 score++;
                 if (score % 5 == 0 && timeLimit > 10)
                 {
@@ -89,6 +94,7 @@ public class MathChallenge : MonoBehaviour
             else
             {
                 attempts--;
+                audioSource.PlayOneShot(incorrecto);
                 if (attempts <= 0)
                 {
                     GameOver();
