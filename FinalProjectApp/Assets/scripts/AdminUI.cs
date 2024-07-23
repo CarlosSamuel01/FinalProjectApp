@@ -30,7 +30,19 @@ public class AdminUI : MonoBehaviour
         SceneManager.LoadScene("resPreguntas");
         
     }
-    
+
+    public void RestoDivision()
+    {
+        SceneManager.LoadScene("Lvl 4");
+
+    }
+
+    public void RestoSuma()
+    {
+        SceneManager.LoadScene("Lvl 2");
+
+    }
+
 
     public void LoadRandomScene()
     {
