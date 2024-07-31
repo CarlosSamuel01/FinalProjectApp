@@ -39,13 +39,13 @@ public class preguntas : MonoBehaviour
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 5, questionTemplate = "7 + _ = 12" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 2, questionTemplate = "8 - _ = 6" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 6, questionTemplate = "2 * _ = 12" });
-        questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 2, questionTemplate = "_ / 5 = 2" });
+        questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 10, questionTemplate = "_ / 5 = 2" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 9, questionTemplate = "_ + 4 = 13" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 1, questionTemplate = "6 - _ = 5" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 5, questionTemplate = "_ * 1 = 5" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 4, questionTemplate = "20 / _ = 5" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 7, questionTemplate = "3 + _ = 10" });
-        questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 2, questionTemplate = "_ - 7 = 2" });
+        questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 9, questionTemplate = "_ - 7 = 2" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 3, questionTemplate = "4 * _ = 12" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 3, questionTemplate = "21 / _ = 7" });
         questions.Add(new Question { questionText = "¿Qué número falta en la siguiente ecuación?", correctAnswer = 8, questionTemplate = "5 + _ = 13" });

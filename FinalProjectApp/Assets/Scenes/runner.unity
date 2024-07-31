@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -873,6 +873,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 294606497652850641, guid: c77618c9cf48814409825e0c6fd51aa6, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3177867258510292488, guid: c77618c9cf48814409825e0c6fd51aa6, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.60402
@@ -891,7 +895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3177867258510292488, guid: c77618c9cf48814409825e0c6fd51aa6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48
+      value: 0.48000002
       objectReference: {fileID: 0}
     - target: {fileID: 3177867258510292488, guid: c77618c9cf48814409825e0c6fd51aa6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -925,6 +929,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3345495010507728654, guid: c77618c9cf48814409825e0c6fd51aa6, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5982932729981868085, guid: c77618c9cf48814409825e0c6fd51aa6, type: 3}
       propertyPath: m_Name
       value: Player
@@ -949,6 +957,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5982932729981868085, guid: c77618c9cf48814409825e0c6fd51aa6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1478349054}
+    - targetCorrespondingSourceObject: {fileID: 5982932729981868085, guid: c77618c9cf48814409825e0c6fd51aa6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1478349056}
   m_SourcePrefab: {fileID: 100100000, guid: c77618c9cf48814409825e0c6fd51aa6, type: 3}
 --- !u!1 &324932375
 GameObject:
@@ -1007,7 +1018,7 @@ Transform:
   m_GameObject: {fileID: 324932375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 19.47}
+  m_LocalPosition: {x: 0, y: 1, z: 19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3451,6 +3462,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &1478349056
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478349049}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1488998899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 33017ed3f61fb2f4aaf8f84ce029b5eb, type: 3}
