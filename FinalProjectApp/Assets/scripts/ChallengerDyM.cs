@@ -11,6 +11,7 @@ public class ChallengerDyM : MonoBehaviour
     public Text attemptsText;
     public Text scoreText;
     public GameObject gameOverPanel;
+    public Image FillTimer;
 
     private int score = 0;
     private int attempts = 3;
@@ -48,6 +49,7 @@ public class ChallengerDyM : MonoBehaviour
                 OnSubmitAnswer();
             }
         }
+        FillTimer.fillAmount = timeRemaining / timeLimit;
     }
 
     void NewQuestion()

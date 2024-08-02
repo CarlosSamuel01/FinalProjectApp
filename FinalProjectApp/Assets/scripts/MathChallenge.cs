@@ -14,6 +14,7 @@ public class MathChallenge : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip correcto;
     public AudioClip incorrecto;
+    public Image FillTimer;
 
     private int score = 0;
     private int attempts = 3;
@@ -46,6 +47,8 @@ public class MathChallenge : MonoBehaviour
         {
             OnSubmitAnswer();
         }
+
+        FillTimer.fillAmount = timeRemaining / timeLimit;   
     }
 
     void NewQuestion()

@@ -2576,7 +2576,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1811852331}
         m_TargetAssemblyTypeName: AdminUI, Assembly-CSharp
-        m_MethodName: RetodivisionyMulti
+        m_MethodName: LoadRandomScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
